@@ -1,0 +1,2 @@
+# DWBI
+Hotel Booking Data Warehouse and OLAP Cube This project implements a hotel booking data warehouse using a star schema design, integrating fact and dimension tables to enable multidimensional analysis. An SSAS (SQL Server Analysis Services) cube is developed on top of the data warehouse to support advanced analytics such as drill-down, roll-up, slicing, and dicing. The solution includes ETL processes, cube deployment, and reporting using Excel and Power BI for interactive business intelligence.
