@@ -1,0 +1,120 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Payment Method.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:Dim Payment Method.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Room.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:Dim Room.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:Dim Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Guest.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:Dim Guest.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelDW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:HotelDW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{9ABEB104-2BBE-352E-98C9-283BE03BC024}|HotelCube.dwproj|solutionrelative:HotelCube.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dim Date.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Date.dim",
+              "RelativeDocumentMoniker": "Dim Date.dim",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Date.dim [Design]",
+              "RelativeToolTip": "Dim Date.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:02:15.197Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dim Payment Method.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Payment Method.dim",
+              "RelativeDocumentMoniker": "Dim Payment Method.dim",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Payment Method.dim [Design]",
+              "RelativeToolTip": "Dim Payment Method.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:18:13.402Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dim Room.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Room.dim",
+              "RelativeDocumentMoniker": "Dim Room.dim",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Room.dim [Design]",
+              "RelativeToolTip": "Dim Room.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:05:41.091Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dim Guest.dim [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Guest.dim",
+              "RelativeDocumentMoniker": "Dim Guest.dim",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\Dim Guest.dim [Design]",
+              "RelativeToolTip": "Dim Guest.dim [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:05:32.594Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HotelDW.dsv [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelDW.dsv",
+              "RelativeDocumentMoniker": "HotelDW.dsv",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelDW.dsv [Design]",
+              "RelativeToolTip": "HotelDW.dsv [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:07:39.583Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HotelCube.cube [Design]",
+              "DocumentMoniker": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelCube.cube",
+              "RelativeDocumentMoniker": "HotelCube.cube",
+              "ToolTip": "C:\\Users\\sivaa\\Desktop\\DWBI_Assignment_02_Answer_IT22154262\\HotelCube\\HotelCube.cube [Design]",
+              "RelativeToolTip": "HotelCube.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-02T14:01:38.977Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

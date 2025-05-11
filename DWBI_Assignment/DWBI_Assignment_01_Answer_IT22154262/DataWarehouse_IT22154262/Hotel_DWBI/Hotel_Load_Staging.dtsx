@@ -1,0 +1,2954 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/30/2025 1:11:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-7CS513LLFF7"
+  DTS:CreatorName="WIN-7CS513LLFF7\sivaa"
+  DTS:DTSID="{5A1DBCAA-1DF7-4AF6-B54E-A08FD7C1DC6E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Hotel_Load_Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{D214C8AF-0C9D-40AA-82BF-6B3191D784ED}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{8E71118A-066F-4E02-BC3A-B22B4AFBBBE4}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\payments.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AA37B655-1396-40F8-9904-5C13672A156A}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\guests.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guest_id"
+              DTS:DTSID="{76459515-3A4D-4A7F-A667-D57572AB58C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{D684123E-51B3-4969-B39C-B5BAC2D6068A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{42DAA289-725D-4DD1-849E-5F04E1A1426D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone"
+              DTS:DTSID="{E8D5A729-432A-4868-94F8-8D0667B6D3B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="join_date"
+              DTS:DTSID="{94EE1409-4D74-4B1E-9C4A-FBCCCCDF5130}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{05DDF60B-6DB0-4649-A4BE-E050751B2383}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\bookings.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="booking_id"
+              DTS:DTSID="{99E35B9F-242B-42DC-80C8-052E4295EE22}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guest_id"
+              DTS:DTSID="{C4B7527C-CDDB-4309-881D-0E29F54F9359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_id"
+              DTS:DTSID="{3A225C7D-9CF0-4DA2-A95C-0C257DCF28FA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="check_in"
+              DTS:DTSID="{98EF18CA-6566-4EE6-8FFA-3B5B363391E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="check_out"
+              DTS:DTSID="{F633FFF5-2831-4BEC-AC7F-38BC0EBA6530}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stay_days"
+              DTS:DTSID="{69B1C97C-33FB-44DD-8044-B895C9E7A209}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="14"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_amount"
+              DTS:DTSID="{660B7DBF-C256-4F35-AA72-7DDBD4ED4348}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{688B64C7-21C0-4051-847E-C30F47104A43}"
+      DTS:ObjectName="Flat File Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\bookings.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="booking_id"
+              DTS:DTSID="{94BA759A-16FC-4FA8-A3D8-16760FFAE132}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guest_id"
+              DTS:DTSID="{D98BB6EA-E794-4153-B188-792B1779526F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_id"
+              DTS:DTSID="{46167F6D-6985-485D-B0CD-10556547659F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="check_in"
+              DTS:DTSID="{A64991CA-BB7B-4EC2-80CC-DA5B5A21D572}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="check_out"
+              DTS:DTSID="{61F98E78-CB6D-4564-89F3-925C499875AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stay_days"
+              DTS:DTSID="{E229E75C-7096-4E46-9CF3-0B540BD5404C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="14"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_amount"
+              DTS:DTSID="{343BDEEB-1A3F-49ED-BF74-3AB586F403BE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F931C280-91F6-4684-9BE3-27E067AA4EA9}"
+      DTS:ObjectName="Flat File Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\rooms.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_id"
+              DTS:DTSID="{7255DDD6-98F5-4FC4-AFB4-5BBC9B121B5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_type"
+              DTS:DTSID="{463ADD50-A36F-443D-B7D4-B001305B5A2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_category"
+              DTS:DTSID="{C2EE1108-E249-42BC-804B-30B3AED6DAF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{B03651C7-30A5-488F-9194-978266CB52D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_available"
+              DTS:DTSID="{AF25A4F5-538D-419E-BBD1-78A0BF62F14E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{DFA45E3E-41EB-44AB-A863-5F6A54FA17FB}"
+      DTS:ObjectName="Flat File Connection Manager 4">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\sivaa\Desktop\DWBI_Assignment_01_Answer_IT22154262\Sources\rooms.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_id"
+              DTS:DTSID="{F1B778E0-0246-48A2-BC68-3AF794237C09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_type"
+              DTS:DTSID="{5D5E7AD6-D693-4024-82EC-23FEB802C00A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_category"
+              DTS:DTSID="{F54D0868-7D4A-4A8F-B3BD-89FA2DC3D152}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="14"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{C4444CD2-08A1-429E-B8C5-B895AF4AA724}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_available"
+              DTS:DTSID="{F7CC1716-7F2F-46F5-9385-4ACDB7E97508}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7878F557-90AA-45CE-BC25-34AB7492BD69}"
+      DTS:ObjectName="WIN-7CS513LLFF7.Hotel_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WIN-7CS513LLFF7;Initial Catalog=Hotel_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Hotel_Load_Staging-{7878F557-90AA-45CE-BC25-34AB7492BD69}WIN-7CS513LLFF7.Hotel_Staging;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Exracting data to guest staging table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{10503673-A54A-4A44-BF2A-84CB166A433C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Exracting data to guest staging table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Exracting data to guest staging table.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{5025CF09-ED20-4E51-9060-592F9E65BA84}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{7B98FC7B-8601-427C-8F4E-36E330E6AF9E}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Exracting data to guest staging table.EventHandlers[OnPreExecute]\Truncate guest staging table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{C353AE3F-BC97-496F-AD2A-908BAADE5898}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate guest staging table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{7878F557-90AA-45CE-BC25-34AB7492BD69}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgGuest" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Exracting data to guest staging table\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input].Columns[phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[email]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone]"
+                      name="Copy of phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[phone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Exracting data to guest staging table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Exracting data to guest staging table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[guest_id]"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]"
+                      name="guest_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      length="50"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phone]"
+                      length="50"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[phone]"
+                      name="phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[join_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[join_date]"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[join_date]"
+                      name="join_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[guest_id]"
+                      dataType="i4"
+                      name="guest_id" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[join_date]"
+                      dataType="date"
+                      name="join_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Exracting data to guest staging table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgGuest]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Exracting data to guest staging table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[guest_id]"
+                      cachedDataType="i4"
+                      cachedName="guest_id"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_id]"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[join_date]"
+                      cachedDataType="date"
+                      cachedName="join_date"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[join_date]"
+                      lineageId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output].Columns[join_date]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of phone]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Copy of phone"
+                      externalMetadataColumnId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      lineageId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_id]"
+                      dataType="i4"
+                      name="guest_id" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="100"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      dataType="wstr"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[phone]"
+                      dataType="wstr"
+                      length="15"
+                      name="phone" />
+                    <externalMetadataColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[join_date]"
+                      dataType="dbDate"
+                      name="join_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Exracting data to guest staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Exracting data to guest staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Exracting data to guest staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Exracting data to guest staging table.Paths[Data Conversion Output]"
+              endId="Package\Exracting data to guest staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Exracting data to guest staging table\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Exracting data to guest staging table.Paths[Flat File Source Output]"
+              endId="Package\Exracting data to guest staging table\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Exracting data to guest staging table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extracting data to booking staging table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B99B8350-B84E-4D79-9DD4-86F70C471733}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extracting data to booking staging table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extracting data to booking staging table.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{11622F36-DC1D-493E-B80F-E17CFC71F439}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{1192EB40-5884-40A0-82FF-50DC338C0550}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extracting data to booking staging table.EventHandlers[OnPreExecute]\Truncate booking staging table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{30897664-D761-4FC9-B3C4-80DFE6DE3051}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate booking staging table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{7878F557-90AA-45CE-BC25-34AB7492BD69}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgBooking" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extracting data to booking staging table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to booking staging table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[guest_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]"
+                      name="guest_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[booking_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[booking_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[booking_id]"
+                      name="booking_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]"
+                      name="room_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_in]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[check_in]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_in]"
+                      name="check_in"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_out]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[check_out]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_out]"
+                      name="check_out"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[stay_days]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stay_days]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[stay_days]"
+                      name="stay_days"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_amount]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]"
+                      name="total_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[guest_id]"
+                      dataType="i4"
+                      name="guest_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[booking_id]"
+                      dataType="i4"
+                      name="booking_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_id]"
+                      dataType="i4"
+                      name="room_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[check_in]"
+                      dataType="date"
+                      name="check_in" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[check_out]"
+                      dataType="date"
+                      name="check_out" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stay_days]"
+                      dataType="i4"
+                      name="stay_days" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_amount]"
+                      dataType="decimal"
+                      name="total_amount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extracting data to booking staging table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgBooking]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to booking staging table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[guest_id]"
+                      cachedDataType="i4"
+                      cachedName="guest_id"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[guest_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[booking_id]"
+                      cachedDataType="i4"
+                      cachedName="booking_id"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[booking_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_id]"
+                      cachedDataType="i4"
+                      cachedName="room_id"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_id]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[check_in]"
+                      cachedDataType="date"
+                      cachedName="check_in"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[check_in]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_in]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[check_out]"
+                      cachedDataType="date"
+                      cachedName="check_out"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[check_out]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[check_out]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[stay_days]"
+                      cachedDataType="i4"
+                      cachedName="stay_days"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stay_days]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[stay_days]" />
+                    <inputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[total_amount]"
+                      cachedDataType="decimal"
+                      cachedName="total_amount"
+                      externalMetadataColumnId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_amount]"
+                      lineageId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_id]"
+                      dataType="i4"
+                      name="booking_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[guest_id]"
+                      dataType="i4"
+                      name="guest_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_id]"
+                      dataType="i4"
+                      name="room_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[check_in]"
+                      dataType="dbDate"
+                      name="check_in" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[check_out]"
+                      dataType="dbDate"
+                      name="check_out" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stay_days]"
+                      dataType="i4"
+                      name="stay_days" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_amount]"
+                      dataType="numeric"
+                      name="total_amount"
+                      precision="10"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to booking staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to booking staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to booking staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to booking staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extracting data to booking staging table.Paths[Flat File Source Output]"
+              endId="Package\Extracting data to booking staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Extracting data to booking staging table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extracting data to payment staging table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{570DB576-A0D5-44E8-99F3-73DE02430635}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extracting data to payment staging table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extracting data to payment staging table.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{1ECDD1BE-985F-46AF-BF2F-A1DF32E7B31F}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{918A3AB1-4DDA-408C-A256-1BECAA8EF814}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extracting data to payment staging table.EventHandlers[OnPreExecute]\Truncate payments staging table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{21AA8A32-9D55-44FE-B230-EDC2268DC846}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate payments staging table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{7878F557-90AA-45CE-BC25-34AB7492BD69}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgPayment" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extracting data to payment staging table\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Extracting data to payment staging table\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\Data Conversion.Inputs[Data Conversion Input].Columns[payment_method]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="payment_method"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_method]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Extracting data to payment staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Output].Columns[payment_method]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Output].Columns[payment_method]"
+                      name="payment_method"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_method]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Extracting data to payment staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extracting data to payment staging table\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">payments$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to payment staging table\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_id]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_id]"
+                      name="payment_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[booking_id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_id]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[booking_id]"
+                      name="booking_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[amount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[amount]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[amount]"
+                      name="amount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_date]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_date]"
+                      name="payment_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_method]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_method]"
+                      length="255"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_method]"
+                      name="payment_method"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_id]"
+                      dataType="r8"
+                      name="payment_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[booking_id]"
+                      dataType="r8"
+                      name="booking_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[amount]"
+                      dataType="r8"
+                      name="amount" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_date]"
+                      dataType="date"
+                      name="payment_date" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].ExternalColumns[payment_method]"
+                      dataType="wstr"
+                      length="255"
+                      name="payment_method" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_id]"
+                      dataType="r8"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_id]"
+                      name="payment_id" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[booking_id]"
+                      dataType="r8"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[booking_id]"
+                      name="booking_id" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[amount]"
+                      dataType="r8"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[amount]"
+                      name="amount" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_date]"
+                      dataType="date"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_date]"
+                      name="payment_date" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_method]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[payment_method]"
+                      name="payment_method" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extracting data to payment staging table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgPayment]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to payment staging table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_id]"
+                      cachedDataType="r8"
+                      cachedName="payment_id"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_id]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[booking_id]"
+                      cachedDataType="r8"
+                      cachedName="booking_id"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_id]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[booking_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[amount]"
+                      cachedDataType="r8"
+                      cachedName="amount"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[amount]" />
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_date]"
+                      cachedDataType="date"
+                      cachedName="payment_date"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_date]"
+                      lineageId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output].Columns[payment_date]" />
+                    <inputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_method]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="payment_method"
+                      externalMetadataColumnId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
+                      lineageId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Output].Columns[payment_method]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_id]"
+                      dataType="i4"
+                      name="payment_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[booking_id]"
+                      dataType="i4"
+                      name="booking_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[amount]"
+                      dataType="numeric"
+                      name="amount"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_date]"
+                      dataType="dbDate"
+                      name="payment_date" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_method]"
+                      dataType="wstr"
+                      length="50"
+                      name="payment_method" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to payment staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to payment staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to payment staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extracting data to payment staging table.Paths[Data Conversion Output]"
+              endId="Package\Extracting data to payment staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Extracting data to payment staging table\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Extracting data to payment staging table.Paths[Excel Source Output]"
+              endId="Package\Extracting data to payment staging table\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Extracting data to payment staging table\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extracting data to room staging table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{110C3C58-FF97-47B5-B677-12511BF00D03}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extracting data to room staging table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Extracting data to room staging table.EventHandlers[OnPreExecute]"
+          DTS:CreationName="OnPreExecute"
+          DTS:DTSID="{44AEC737-D16D-4488-9D1D-3D7DDF6B2A95}"
+          DTS:EventID="0"
+          DTS:EventName="OnPreExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{9271D0E3-8278-466A-BF69-B3F705AA3751}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Extracting data to room staging table.EventHandlers[OnPreExecute]\Truncate room staging table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{17FC685C-D555-4A22-A0F5-79801D7D7FC6}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Truncate room staging table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{7878F557-90AA-45CE-BC25-34AB7492BD69}"
+                  SQLTask:SqlStatementSource="truncate table dbo.StgRoom" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Extracting data to room staging table\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input].Columns[room_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="room_type"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_type]" />
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input].Columns[room_category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="room_category"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_category]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_type]"
+                      name="room_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_type]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_category]"
+                      name="room_category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_category]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extracting data to room staging table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to room staging table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 4]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_id]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]"
+                      name="room_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_type]"
+                      length="50"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_type]"
+                      name="room_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_category]"
+                      length="50"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_category]"
+                      name="room_category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[price]"
+                      name="price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[is_available]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_available]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[is_available]"
+                      name="is_available"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_id]"
+                      dataType="i4"
+                      name="room_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="room_type" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[room_category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="room_category" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[price]"
+                      dataType="decimal"
+                      name="price" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[is_available]"
+                      dataType="bool"
+                      name="is_available" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Extracting data to room staging table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StgRoom]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Extracting data to room staging table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[WIN-7CS513LLFF7.Hotel_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_id]"
+                      cachedDataType="i4"
+                      cachedName="room_id"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_id]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[room_id]" />
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[price]"
+                      cachedDataType="decimal"
+                      cachedName="price"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[price]" />
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[is_available]"
+                      cachedDataType="bool"
+                      cachedName="is_available"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_available]"
+                      lineageId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output].Columns[is_available]" />
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="room_type"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type]"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_type]" />
+                    <inputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[room_category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="room_category"
+                      externalMetadataColumnId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_category]"
+                      lineageId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output].Columns[room_category]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_id]"
+                      dataType="i4"
+                      name="room_id" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="room_type" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[room_category]"
+                      dataType="wstr"
+                      length="50"
+                      name="room_category" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[price]"
+                      dataType="numeric"
+                      name="price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_available]"
+                      dataType="bool"
+                      name="is_available" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Extracting data to room staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Extracting data to room staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Extracting data to room staging table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Extracting data to room staging table.Paths[Data Conversion Output]"
+              endId="Package\Extracting data to room staging table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Extracting data to room staging table\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Extracting data to room staging table.Paths[Flat File Source Output]"
+              endId="Package\Extracting data to room staging table\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Extracting data to room staging table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BEAE3D7B-0DAA-473A-B9A5-A0C03E8EC0DD}"
+      DTS:From="Package\Extracting data to payment staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Exracting data to guest staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0480B87F-7D9B-43CA-8D36-9163DD411D66}"
+      DTS:From="Package\Exracting data to guest staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Extracting data to booking staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E9D2AC36-824C-4724-BC7E-D929B3503ED2}"
+      DTS:From="Package\Extracting data to booking staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Extracting data to room staging table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,42.6666666666667"
+          Id="Package\Exracting data to guest staging table"
+          TopLeft="141.628781818418,113.703348033856" />
+        <NodeLayout
+          Size="266.666666666667,42.6666666666667"
+          Id="Package\Extracting data to booking staging table"
+          TopLeft="159.545448957519,210.861241703924" />
+        <NodeLayout
+          Size="269.333333333334,42.6666666666667"
+          Id="Package\Extracting data to payment staging table"
+          TopLeft="97.4999956414105,36.9473680153778" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\Extracting data to room staging table"
+          TopLeft="192.045449617912,294.960124818912" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="232.166662308077,79.6140346820445">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.4621195103409,34.0893133518118"
+              Start="0,0"
+              End="35.4621195103409,26.5893133518118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0446566759059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0446566759059"
+                    Point2="0,17.0446566759059"
+                    Point3="4,17.0446566759059" />
+                  <mssgle:LineSegment
+                    End="31.4621195103409,17.0446566759059" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.4621195103409,17.0446566759059"
+                    Point2="35.4621195103409,17.0446566759059"
+                    Point3="35.4621195103409,21.0446566759059" />
+                  <mssgle:LineSegment
+                    End="35.4621195103409,26.5893133518118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="267.628781818418,156.370014700523">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.2500004724345,54.491227003401"
+              Start="0,0"
+              End="25.2500004724345,46.991227003401">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2456135017005" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2456135017005"
+                    Point2="0,27.2456135017005"
+                    Point3="4,27.2456135017005" />
+                  <mssgle:LineSegment
+                    End="21.2500004724345,27.2456135017005" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.2500004724345,27.2456135017005"
+                    Point2="25.2500004724345,27.2456135017005"
+                    Point3="25.2500004724345,31.2456135017005" />
+                  <mssgle:LineSegment
+                    End="25.2500004724345,46.991227003401" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="292.878782290853,253.527908370591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.8333339937257,41.4322164483217"
+              Start="0,0"
+              End="25.8333339937257,33.9322164483217">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7161082241609" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7161082241609"
+                    Point2="0,20.7161082241609"
+                    Point3="4,20.7161082241609" />
+                  <mssgle:LineSegment
+                    End="21.8333339937257,20.7161082241609" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.8333339937257,20.7161082241609"
+                    Point2="25.8333339937257,20.7161082241609"
+                    Point3="25.8333339937257,24.7161082241609" />
+                  <mssgle:LineSegment
+                    End="25.8333339937257,33.9322164483217" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Exracting data to guest staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Exracting data to guest staging table\Flat File Source"
+          TopLeft="256.999992340803,38.9999988377095" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Exracting data to guest staging table\OLE DB Destination"
+          TopLeft="257.999992311001,198.999994069338" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Exracting data to guest staging table\Data Conversion"
+          TopLeft="261.999992191792,119.999996423721" />
+        <EdgeLayout
+          Id="Package\Exracting data to guest staging table.Paths[Flat File Source Output]"
+          TopLeft="337.833325599631,81.6666655043761">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.3333309193453"
+              Start="0,0"
+              End="0,30.8333309193453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.8333309193453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Exracting data to guest staging table.Paths[Data Conversion Output]"
+          TopLeft="343.33332558473,162.666663090388">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3333309789499"
+              Start="0,0"
+              End="0,28.8333309789499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8333309789499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Exracting data to guest staging table.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\Exracting data to guest staging table.EventHandlers[OnPreExecute]\Truncate guest staging table"
+          TopLeft="311.999990701676,91.9999972581864" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Exracting data to guest staging table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extracting data to booking staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extracting data to booking staging table\Flat File Source"
+          TopLeft="232.999993056059,32.9999990165234" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Extracting data to booking staging table\OLE DB Destination"
+          TopLeft="219.999993443489,202.999993950129" />
+        <EdgeLayout
+          Id="Package\Extracting data to booking staging table.Paths[Flat File Source Output]"
+          TopLeft="308.833326583107,75.66666568319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,127.333328266939"
+              Start="0,0"
+              End="0,119.833328266939">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,119.833328266939" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Extracting data to booking staging table.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Extracting data to booking staging table.EventHandlers[OnPreExecute]\Truncate booking staging table"
+          TopLeft="266.99999204278,128.999996155501" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extracting data to booking staging table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extracting data to payment staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Extracting data to payment staging table\Excel Source"
+          TopLeft="105.624995278195,20.5263155640988" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Extracting data to payment staging table\Data Conversion"
+          TopLeft="106.249995250255,94.4210515948544" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Extracting data to payment staging table\OLE DB Destination"
+          TopLeft="101.249995473773,166.2631560692" />
+        <EdgeLayout
+          Id="Package\Extracting data to payment staging table.Paths[Excel Source Output]"
+          TopLeft="176.958328611528,63.1929822307655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.62499997206032,31.228069364089"
+              Start="0,0"
+              End="8.62499997206032,23.728069364089">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.6140346820445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.6140346820445"
+                    Point2="0,15.6140346820445"
+                    Point3="4,15.6140346820445" />
+                  <mssgle:LineSegment
+                    End="4.62499997206032,15.6140346820445" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.62499997206032,15.6140346820445"
+                    Point2="8.62499997206032,15.6140346820445"
+                    Point3="8.62499997206032,19.6140346820445" />
+                  <mssgle:LineSegment
+                    End="8.62499997206032,23.728069364089" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extracting data to payment staging table.Paths[Data Conversion Output]"
+          TopLeft="187.083328695347,137.087718261521">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1754378076791"
+              Start="0,0"
+              End="0,21.6754378076791">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6754378076791" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Extracting data to payment staging table.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="234.666666666667,42.6666666666667"
+          Id="Package\Extracting data to payment staging table.EventHandlers[OnPreExecute]\Truncate payments staging table"
+          TopLeft="230.999993115664,48.9999985396862" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extracting data to payment staging table\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extracting data to payment staging table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Extracting data to room staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Extracting data to room staging table\Flat File Source"
+          TopLeft="305.99999088049,78.9999976456166" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Extracting data to room staging table\OLE DB Destination"
+          TopLeft="324.999990314245,240.999992817641" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Extracting data to room staging table\Data Conversion"
+          TopLeft="304.999990910292,155.999995350838" />
+        <EdgeLayout
+          Id="Package\Extracting data to room staging table.Paths[Flat File Source Output]"
+          TopLeft="383.833324228724,121.666664312283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.3333310385545"
+              Start="0,0"
+              End="0,26.8333310385545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8333310385545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extracting data to room staging table.Paths[Data Conversion Output]"
+          TopLeft="384.333324243625,198.666662017504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="27.9999994039534,42.333330800136"
+              Start="0,0"
+              End="27.9999994039534,34.833330800136">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.166665400068" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.166665400068"
+                    Point2="0,21.166665400068"
+                    Point3="4,21.166665400068" />
+                  <mssgle:LineSegment
+                    End="23.9999994039534,21.166665400068" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.9999994039534,21.166665400068"
+                    Point2="27.9999994039534,21.166665400068"
+                    Point3="27.9999994039534,25.166665400068" />
+                  <mssgle:LineSegment
+                    End="27.9999994039534,34.833330800136" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <DtsEventHandler
+    design-time-name="Package\Extracting data to room staging table.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="212,42.6666666666667"
+          Id="Package\Extracting data to room staging table.EventHandlers[OnPreExecute]\Truncate room staging table"
+          TopLeft="264.999992102385,96.9999971091748" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extracting data to room staging table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
